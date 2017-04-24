@@ -18,7 +18,7 @@ GSE65163_pdat <- pData(GSE65163)
 ```
 ^^ only had 66k probes, need the full data...
 
-## Therefore, downloaded all IDAT files from the GEO website to "path" on desktop
+## Therefore, downloaded all IDAT files from the GEO website to desktop
 ```{r}
 #need to have a sample info file with columns called "Sentrix_Barcode" and "Sentrix_Position")
 #the column "Sentrix_Barcode" must contain the file name of the IDATS
