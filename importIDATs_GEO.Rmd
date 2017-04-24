@@ -1,0 +1,37 @@
+April 24, 2017
+
+### I usually use methylumi objects, but today I needed to download some GEO data and they only had the full data available as IDAT files.
+
+## load libraries
+```{r eval = FALSE}
+library(GEOquery)
+library(minfi)
+library(methylumi)
+```
+
+## get some GEO data
+```{r}
+GSE65163 <- getGEO("GSE65163")
+GSE65163 <- GSE65163$GSE65163_series_matrix.txt.gz
+GSE65163_betas <- m2beta(exprs(GSE65163))
+GSE65163_pdat <- pData(GSE65163)
+```
+^^ only had 66k probes, need the full data...
+
+## Therefore, downloaded all IDAT files from the GEO website to "path" on desktop
+```{r}
+#need to have a sample info file with columns called "Sentrix_Barcode" and "Sentrix_Position")
+#the column "Sentrix_Barcode" must contain the file name of the IDATS
+#ie. the IDAT files I downloaded have the names: "GSM1588412_9376525049_R01C01_Red.idat", so the column "Sentrix_Barcode" needs to have "GSM1588412_9376525049", the column "Sentrix_Position" needs to have the row/column info "R01C01".
+#I needed to obtain the sentrix ID/sentrix position separately as this was not provided in the pdat from GEO, but I was able to retrieve this information from the names of the IDAT files
+#uploaded this information as "GSE65163_names"
+GSE65163_names <- read.csv("Documents/GSE65163_names.csv")
+identical(rownames(GSE65163_pdat), as.character(GSE65163_names$SampleID)) #TRUE
+GSE65163_pdat2 <- cbind(GSE65163_pdat, GSE65163_names)
+colnames(GSE65163_pdat2)[47] <- "Sentrix_Position"
+colnames(GSE65163_pdat2)[46] <- "Sentrix_Barcode"
+GSE65163_pdat3 <- GSE65163_pdat2
+GSE65163_pdat3$Sentrix_Barcode <- paste0(rownames(GSE65163_pdat3),"_",GSE65163_pdat3$Sentrix_Barcode)
+GSE65163_dat <- importMethyIDAT(GSE65163_pdat3, dataPath = "Desktop/GSE65163_RAW/") #TA-DA
+
+
