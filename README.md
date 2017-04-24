@@ -6,4 +6,4 @@ R code for DNA methylation analysis
 If you have any questions, feel free to email me: lmcewen@cmmt.ubc.ca
 
 
-[importIDATs_GEO](https://github.com/lmcewen/helpfulcode/blob/master/importIDATs_GEO.Rmd)
+[importing IDAT files](https://github.com/lmcewen/helpfulcode/blob/master/importIDATs_GEO.Rmd)
