@@ -14,4 +14,4 @@ code:
 spss2date <- function(x) as.Date(x/86400, origin = "1582-10-14")
 spss2date(13510000000)
 # "2010-11-24"
-``
+```
