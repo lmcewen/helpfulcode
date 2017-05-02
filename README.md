@@ -8,3 +8,4 @@ If you have any questions, feel free to email me: lmcewen@cmmt.ubc.ca
 ## Preprocessing 
 [importing IDAT files](https://github.com/lmcewen/helpfulcode/blob/master/importIDATs_GEO.Rmd)
 
+[converting SPSS coded dates](https://github.com/lmcewen/helpfulcode/edit/master/spssDates.Rmd)
