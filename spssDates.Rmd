@@ -1,0 +1,15 @@
+2017-May-02
+Lisa M McEwen
+###Converting dates exported from SPSS to actual dates and not random numbers
+
+Problem: 
+Meta data file exported from SPSS into R has numeric coded dates, "13254710400", need to convert to actual date...
+
+Answer: (http://scs.math.yorku.ca/index.php/R:_Importing_dates_from_SPSS)
+Apparently, "dates in SPSS are recorded in seconds since October 14, 1582, the date of the beginning of the Julian calendar. To transform the value to the R "Date" format, you simply need to turn seconds into days and specify the origin. The following function will do the trick:"
+
+```{r}
+spss2date <- function(x) as.Date(x/86400, origin = "1582-10-14")
+spss2date(13510000000)
+# "2010-11-24"
+``
