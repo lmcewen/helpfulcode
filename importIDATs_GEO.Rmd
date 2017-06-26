@@ -33,5 +33,14 @@ colnames(GSE65163_pdat2)[46] <- "Sentrix_Barcode"
 GSE65163_pdat3 <- GSE65163_pdat2
 GSE65163_pdat3$Sentrix_Barcode <- paste0(rownames(GSE65163_pdat3),"_",GSE65163_pdat3$Sentrix_Barcode)
 GSE65163_dat <- importMethyIDAT(GSE65163_pdat3, dataPath = "Desktop/GSE65163_RAW/") #TA-DA
+```
 
+## Noob normalization
+```{r}
+GSE65163_noob <- preprocessNoob(GSE65163_dat)
+```
 
+## Quantile normalization
+```{r}
+GSE65163_noob_quantile <- preprocessQuantile(GSE65163_noob)
+```
