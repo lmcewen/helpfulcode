@@ -9,3 +9,7 @@ If you have any questions, feel free to email me: lmcewen@cmmt.ubc.ca
 [importing IDAT files](https://github.com/lmcewen/helpfulcode/blob/master/importIDATs_GEO.Rmd)
 
 [converting SPSS coded dates](https://github.com/lmcewen/helpfulcode/edit/master/spssDates.Rmd)
+
+
+# Plotting
+[add mean instead of median on a ggplot boxplot](https://github.com/lmcewen/helpfulcode/blob/master/stat_summary_meanBoxplot.Rmd)
