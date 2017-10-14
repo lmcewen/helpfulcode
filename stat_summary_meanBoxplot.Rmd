@@ -1,0 +1,15 @@
+## Oct 14, 2017
+## Lisa McEwen
+*Source: https://stackoverflow.com/questions/25999677/how-to-plot-mean-and-standard-error-in-boxplot-in-r*
+
+### Changing a ggplot boxplot to represent the mean instead of the median: 
+
+```{r}
+MinMeanSEMMax <- function(x) {
+  v <- c(min(x), mean(x) - sd(x)/sqrt(length(x)), mean(x), mean(x) + sd(x)/sqrt(length(x)), max(x))
+  names(v) <- c("ymin", "lower", "middle", "upper", "ymax")
+  v
+}
+
+#add this line to ggplot: + stat_summary(fun.data=MinMeanSEMMax, geom="boxplot", colour="red")
+```
