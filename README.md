@@ -13,5 +13,6 @@ If you have any questions, feel free to email me: lmcewen@cmmt.ubc.ca
 
 # Plotting
 [add mean instead of median on a ggplot boxplot](https://github.com/lmcewen/helpfulcode/blob/master/stat_summary_meanBoxplot.Rmd)
+
 [add shape to represent mean on a ggplot](https://github.com/lmcewen/helpfulcode/blob/master/stat_summary_meanShape.Rmd)
 
