@@ -8,4 +8,4 @@ geom_point()+
 stat_summary(fun.y = mean, geom="point", shape = 4, colour="darkred", size=6) 
 ```
 
-![shapeForMeanGGPLOT](https://github.com/lmcewen/helpfulcode/new/master/figs/shapeForMeanGGPLOT.png)
+![shapeForMeanGGPLOT](https://github.com/lmcewen/helpfulcode/blob/figs/FIG3_oct14.png)
