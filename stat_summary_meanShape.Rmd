@@ -9,3 +9,5 @@ stat_summary(fun.y = mean, geom="point", shape = 4, colour="darkred", size=6)
 ```
 
 ![shapeForMeanGGPLOT](https://github.com/lmcewen/helpfulcode/blob/figs/FIG3_oct14.png)
+
+Note: I added some fancy stuff in adobe illustrator, but some of this can be acheived with geom_text
