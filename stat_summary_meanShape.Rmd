@@ -1,0 +1,11 @@
+  ### Oct 14, 2017
+  ### Lisa McEwen
+  *Source: trial and error*
+  
+  ```{r}
+ggplot(dat, aes(x=val, y=var))+
+geom_point()+
+stat_summary(fun.y = mean, geom="point", shape = 4, colour="darkred", size=6) 
+```
+
+![shapeForMeanGGPLOT]https://github.com/lmcewen/helpfulcode/new/master/figs/shapeForMeanGGPLOT.png)
