@@ -12,6 +12,11 @@ library(methylumi)
 ## get some GEO data
 ```{r}
 GSE65163 <- getGEO("GSE65163")
+#if you get the error: Error in download.file(myurl, destfile, mode = mode, quiet = TRUE, method = #getOption("download.file.method.GEOquery")) : 
+#  cannot open URL 'http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?targ=self&acc=GPL13534&form=text&view=full'
+It is likely that there is an issue with retrieving the file "GPL13534" from ncbi. If you can download that directly to your home directory, then run the following line so that it will pull the GPL13534 locally: 
+#GSE65163 <- getGEO("GSE65163", destdir = "/home/yourdirectory/")
+
 GSE65163 <- GSE65163$GSE65163_series_matrix.txt.gz
 GSE65163_betas <- m2beta(exprs(GSE65163))
 GSE65163_pdat <- pData(GSE65163)
